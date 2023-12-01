@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/01 17:30:14 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:31:35 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	parse(int argc, char **argv)
 {
-	return (1)
+	return (1);
 }
 
 int	main(int argc, char **argv)
