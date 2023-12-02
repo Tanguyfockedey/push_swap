@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_clst_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/02 21:16:26 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/02 21:31:15 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/02 21:47:04 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-int	main(int argc, char **argv)
+void	ft_clst_free(t_clst **lst)
 {
-	t_clst	**a;
+	t_clst	*cell;
 
-	if (!parse(argc, argv, a))
-		return (1);
-	return (0);
+	if (!lst || !(*lst))
+		return ;
+	while ((*lst)->next != *lst)
+	{
+		cell = (*lst)->next;
+		(*lst)->next = cell->next;
+		free(cell);
+	}
+	free(*lst);
 }
