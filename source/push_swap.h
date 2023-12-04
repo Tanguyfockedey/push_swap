@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/02 21:05:34 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:10:22 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 
 typedef struct s_clst
 {
-	struct t_clst	*next;
-	struct t_clst	*prev;
+	struct s_clst	*next;
+	struct s_clst	*prev;
 	long			nbr;
 	long			index;
 }	t_clst;
 
-t_clst	*ft_clstnew(int nbr);
-void	ft_clstadd(t_clst **a, t_clst *new);
+t_clst	*ft_clst_new(int nbr);
+void	ft_clst_add(t_clst **lst, t_clst *new);
+void	ft_clst_free(t_clst **lst);
+void	ft_clst_print(t_clst **lst);
+int	parse(int argc, char **argv, t_clst **a);
 
 
 #endif

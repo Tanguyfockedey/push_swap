@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/02 21:30:42 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:26:35 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int	ft_error(t_clst **a)
 	ft_clst_free(a);
 	ft_putstr_fd("Error\n", 2);
 	return (0);
+}
+
+int	ft_valid(char *str, int *nbr)
+{
+	*nbr = ft_atoi(str);
+	return (1);
 }
 
 int	parse(int argc, char **argv, t_clst **a)
@@ -30,15 +36,15 @@ int	parse(int argc, char **argv, t_clst **a)
 		return (0);
 	while (++i < argc)
 	{
-		if (ft_valid(argv[argc], &nbr)) 
+		if (ft_valid(argv[argc], &nbr))
 		{
-			new = ft_clstnew(nbr);
+			new = ft_clst_new(nbr);
 			if (!new)
 			{
 				ft_error(a);
 				return (0);
 			}
-			ft_clstadd(a, new);
+			ft_clst_add(a, new);
 		}
 		else
 		{

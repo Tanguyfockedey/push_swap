@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clstadd.c                                       :+:      :+:    :+:   */
+/*   ft_clst_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 19:35:11 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/02 21:05:19 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/02 19:55:49 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/04 14:16:01 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_clstadd(t_clst **a, t_clst *new)
+t_clst	*ft_clst_new(int nbr)
 {
-	t_clst	*tmp;
+	t_clst	*cell;
 
-	if (!a || !new)
-		return ;
-	if (*a == 0)
-		*a = new;
-	else
-		{
-			tmp = (*a)->prev;
-			tmp->next = new;
-			new->next = *a;
-			new->prev = tmp;
-			(*a)->prev = new;
-		}
+	cell = malloc(sizeof(t_clst));
+	if (!cell)
+		return (0);
+	cell->nbr = nbr;
+	cell->index = 0;
+	cell->next = cell;
+	cell->prev = cell;
+	return (cell);
 }
