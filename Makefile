@@ -6,7 +6,7 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:09:37 by tafocked          #+#    #+#              #
-#    Updated: 2023/12/04 18:20:51 by tafocked         ###   ########.fr        #
+#    Updated: 2023/12/05 18:01:48 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,10 @@ FILES	= source/ft_clst_add.c \
 			source/ft_clst_free.c \
 			source/ft_clst_new.c \
 			source/ft_clst_print.c \
+			source/ft_clst_size.c \
+			source/ft_parse.c \
+			source/ft_valid_arg.c \
 			source/main.c \
-			source/parse.c \
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
