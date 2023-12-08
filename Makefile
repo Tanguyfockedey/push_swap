@@ -6,14 +6,16 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:09:37 by tafocked          #+#    #+#              #
-#    Updated: 2023/12/08 15:46:26 by tafocked         ###   ########.fr        #
+#    Updated: 2023/12/08 17:42:03 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
 FILES	= source/ft_clst_add.c \
+			source/ft_clst_check_dup.c \
 			source/ft_clst_free.c \
+			source/ft_clst_issorted.c \
 			source/ft_clst_new.c \
 			source/ft_clst_print.c \
 			source/ft_clst_size.c \

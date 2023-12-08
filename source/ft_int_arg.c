@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 17:27:56 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/08 17:18:58 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:54:06 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,17 @@ static int	ft_overflow(char *str)
 
 int	ft_int_arg(char *str, int *nbr)
 {
-	int i;
-	
+	int	i;
+
 	i = -1;
 	if (!ft_isdigit(str[0]) && str[0] != '+' && str[0] != '-')
 		return (0);
 	if (str[0] == '+' || str[0] == '-')
+	{
 		i++;
+		if (!str[1])
+			return (0);
+	}
 	while (str[++i])
 		if (!ft_isdigit(str[i]))
 			return (0);

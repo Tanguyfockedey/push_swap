@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/08 15:40:10 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:58:27 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@ typedef struct s_clst
 {
 	struct s_clst	*next;
 	struct s_clst	*prev;
-	long			nbr;
-	long			index;
+	int				nbr;
+	int				index;
 }	t_clst;
 
-t_clst	*ft_clst_new(int nbr);
 void	ft_clst_add(t_clst **lst, t_clst *new);
+int		ft_clst_check_dup(t_clst **a);
 void	ft_clst_free(t_clst **lst);
+int		ft_clst_issorted(t_clst **lst);
+t_clst	*ft_clst_new(int nbr);
 void	ft_clst_print(t_clst **lst);
 int		ft_clst_size(t_clst **a);
-int		ft_parse(int argc, char **argv, t_clst **a);
 int		ft_int_arg(char *str, int *nbr);
+int		ft_parse(int argc, char **argv, t_clst **a);
 
 
 #endif
