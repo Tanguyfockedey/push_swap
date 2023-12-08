@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:31:21 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/05 16:38:24 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:00:12 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_clst_print(t_clst **lst)
 	tmp = *lst;
 	ft_printf("nbr = %d\n", tmp->nbr);
 //	ft_printf("index = %d\n", tmp->index);
-	ft_printf("addr = %p\n", tmp);
+//	ft_printf("addr = %p\n", tmp);
 //	ft_printf("next = %p\n", tmp->next);
 //	ft_printf("prev = %p\n\n", tmp->prev);
 	while (tmp->next != *lst)

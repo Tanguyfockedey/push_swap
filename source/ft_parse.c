@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/05 17:30:39 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:41:28 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ int	ft_valid(char *str, int *nbr)
 int ft_fill_a(char **argv, t_clst **a)
 {
 	int		i;
-	long	nbr;
+	int		nbr;
 	t_clst	*new;
 
 	i = -1;
 	while (argv[++i])
 	{
-		if (ft_valid_arg(argv[i], &nbr))
+		if (ft_int_arg(argv[i], &nbr))
 		{
 			new = ft_clst_new(nbr);
 			if (!new)
