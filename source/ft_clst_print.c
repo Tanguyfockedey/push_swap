@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:31:21 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 17:39:17 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:27:17 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	ft_clst_print(t_clst **lst)
 
 void	ft_clst_print_ab(t_clst **a, t_clst **b)
 {
-	ft_printf("A: ");
+	ft_printf("A (%d) : ", ft_clst_size(a));
 	ft_clst_print(a);
-	ft_printf("\nB: ");
+	ft_printf("\nB (%d) : ", ft_clst_size(b));
 	ft_clst_print(b);
 	ft_printf("\n\n");
 }

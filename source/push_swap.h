@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 17:40:19 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 19:19:25 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	ft_clst_print_ab(t_clst **a, t_clst **b);
 int		ft_clst_size(t_clst **a);
 int		ft_int_arg(char *str, int *nbr);
 int		ft_parse(int argc, char **argv, t_clst **a);
-void	ft_push(t_clst **from, t_clst **to);
-void	ft_rotate(t_clst **lst);
+void	ft_sort_three(t_clst **lst, char ch);
+void	ft_push(t_clst **from, t_clst **to, char c);
+void	ft_rotate(t_clst **lst, char c);
 void	ft_rr(t_clst **a, t_clst **b);
-void	ft_rrotate(t_clst **lst);
+void	ft_rrotate(t_clst **lst, char c);
 void	ft_rrr(t_clst **a, t_clst **b);
-void	ft_swap(t_clst **lst);
+void	ft_swap(t_clst **lst, char c);
 void	ft_ss(t_clst **a, t_clst **b);
 
 #endif
