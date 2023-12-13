@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 17:21:58 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:33:23 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,11 @@ int	main(int argc, char **argv)
 	ft_rrotate(a);
 	ft_clst_print_ab(a, b);
 
-
 //	ft_printf("clist size = %d\n", ft_clst_size(a));
 //	if (ft_clst_issorted(a))
 //		ft_printf("list is sorted\n");
 //	else
 //		ft_printf("list is NOT sorted\n");
-
 
 	ft_clst_free(a);
 	return (0);

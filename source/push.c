@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 15:47:45 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:45:27 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	ft_push(t_clst **from, t_clst **to)
 	if (!(*from))
 		return ;
 	tmp = (*from)->prev;
-	if ((*from)->next == (*from))
+	if ((*from)->next == *from)
 		*from = 0;
 	else
 	{
-		(*from)->prev = ((*from)->prev)->prev;
-		((*from)->prev)->next = (*from);
+		(*from)->prev = (*from)->prev->prev;
+		(*from)->prev->next = *from;
 	}
 	if (!(*to))
 	{
@@ -36,7 +36,7 @@ void	ft_push(t_clst **from, t_clst **to)
 	{
 		tmp->prev = (*to)->prev;
 		tmp->next = *to;
-		((*to)->prev)->next = tmp;
+		(*to)->prev->next = tmp;
 		(*to)->prev = tmp;
 	}
 }

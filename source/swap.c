@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:08:58 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 17:14:58 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:43:37 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	ft_swap(t_clst **lst)
 		ft_rotate(lst);
 	else
 	{
-	last = (*lst)->prev;
-	swap = last->prev;
-	(swap->prev)->next = last;
-	last->prev = swap->prev;
-	last->next = swap;
-	swap->prev = last;
-	swap->next = (*lst);
-	(*lst)->prev = swap;
+		last = (*lst)->prev;
+		swap = last->prev;
+		swap->prev->next = last;
+		last->prev = swap->prev;
+		last->next = swap;
+		swap->prev = last;
+		swap->next = *lst;
+		(*lst)->prev = swap;
 	}
 }
 

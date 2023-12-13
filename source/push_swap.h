@@ -6,12 +6,12 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 16:08:40 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:40:19 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
- #define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../includes/libft_updated/libft/libft.h"
 # include "../includes/libft_updated/printf/ft_printf.h"
@@ -40,6 +40,5 @@ void	ft_rrotate(t_clst **lst);
 void	ft_rrr(t_clst **a, t_clst **b);
 void	ft_swap(t_clst **lst);
 void	ft_ss(t_clst **a, t_clst **b);
-
 
 #endif

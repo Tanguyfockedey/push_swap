@@ -6,13 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/08 17:30:13 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:36:57 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_tab(int argc, char **argv)
+static char	**ft_tab(int argc, char **argv)
 {
 	if (argc == 1)
 		return (0);
@@ -30,7 +30,7 @@ char	**ft_tab(int argc, char **argv)
 	return (argv);
 }
 
-void	ft_tab_free(char **argv)
+static void	ft_tab_free(char **argv)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ void	ft_tab_free(char **argv)
 	free(argv);
 }
 
-int	ft_error(t_clst **a, int argc, char **argv)
+static int	ft_error(t_clst **a, int argc, char **argv)
 {
 	if (argc == 2)
 		ft_tab_free(argv);
@@ -49,7 +49,7 @@ int	ft_error(t_clst **a, int argc, char **argv)
 	return (0);
 }
 
-int	ft_fill_a(char **argv, t_clst **a)
+static int	ft_fill_a(char **argv, t_clst **a)
 {
 	int		i;
 	int		nbr;
