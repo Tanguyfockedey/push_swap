@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clst_size.c                                     :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 17:03:14 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 15:12:02 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/13 15:08:58 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/13 15:28:37 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_clst_size(t_clst **lst)
+void	ft_swap(t_clst **lst)
 {
-	int		i;
-	t_clst	*tmp;
+	t_clst	*last;
+	t_clst	*swap;
 
-	if (!*lst)
-		return (0);
-	if ((*lst)->next == *lst)
-		return (1);
-	i = 0;
-	tmp = *lst;
-	while (tmp != *lst || i == 0)
-	{
-		i++;
-		tmp = tmp->next;
-	}
-	return (i);
+	if (!(*lst))
+		return ;
+	last = (*lst)->prev;
+	swap = last->prev;
+	last->prev = swap->prev;
+	last->next = swap;
+	swap->prev = last;
+	swap->next = (*lst);
+}
+
+void	ft_ss(t_clst **a, t_clst **b)
+{
+	ft_swap(a);
+	ft_swap(b);
 }
