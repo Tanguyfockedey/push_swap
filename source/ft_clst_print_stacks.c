@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_clst_print_stacks.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/15 17:49:15 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/04 14:31:21 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/15 17:42:58 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-int	main(int argc, char **argv)
+static void	ft_clst_print(t_clst **lst)
 {
-	t_stacks	*stacks;
-	t_stacks	obj;
+	t_clst	*tmp;
 
-	stacks = &obj;
-	ft_init(stacks);
-	ft_parse(argc, argv, stacks);
-	
-	ft_clst_print_stacks(stacks);
+	if (!lst || !(*lst))
+		return ;
+	tmp = *lst;
+	ft_printf("%d  ", tmp->nbr);
+	while (tmp->next != *lst)
+	{
+		tmp = tmp->next;
+		ft_printf("%d  ", tmp->nbr);
+	}
+}
 
-//	ft_printf("clist size = %d\n", ft_clst_size(a));
-//	if (ft_clst_issorted(a))
-//		ft_printf("list is sorted\n");
-//	else
-//		ft_printf("list is NOT sorted\n");
-
-	ft_sort_three(stacks->a, 'a');
-
-	ft_clst_free(stacks->a);
-	return (0);
+void	ft_clst_print_stacks(t_stacks *stacks)
+{
+	ft_printf("A (%d) : ", stacks->size_a);
+	ft_clst_print(stacks->a);
+	ft_printf("\nB (%d) : ", stacks->size_b);
+	ft_clst_print(stacks->b);
+	ft_printf("\n\n");
 }

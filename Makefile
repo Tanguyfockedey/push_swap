@@ -6,7 +6,7 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:09:37 by tafocked          #+#    #+#              #
-#    Updated: 2023/12/13 19:20:08 by tafocked         ###   ########.fr        #
+#    Updated: 2023/12/15 18:34:18 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,10 @@ FILES	= source/ft_clst_add.c \
 			source/ft_clst_free.c \
 			source/ft_clst_issorted.c \
 			source/ft_clst_new.c \
-			source/ft_clst_print.c \
+			source/ft_clst_print_stacks.c \
 			source/ft_clst_size.c \
+			source/ft_clst_value.c \
+			source/ft_init.c \
 			source/ft_int_arg.c \
 			source/ft_parse.c \
 			source/ft_sort_three.c \

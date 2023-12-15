@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort_big.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/15 17:49:15 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/15 17:07:13 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/15 18:49:49 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-
-int	main(int argc, char **argv)
+ft_count_atob()
 {
-	t_stacks	*stacks;
-	t_stacks	obj;
 
-	stacks = &obj;
-	ft_init(stacks);
-	ft_parse(argc, argv, stacks);
-	
-	ft_clst_print_stacks(stacks);
+}
 
-//	ft_printf("clist size = %d\n", ft_clst_size(a));
-//	if (ft_clst_issorted(a))
-//		ft_printf("list is sorted\n");
-//	else
-//		ft_printf("list is NOT sorted\n");
+ft_fill_b(t_stacks *stacks)
+{
+	int	count;
+	int	index;
+	int	small_index;
 
+	index = 1;
+	small_index = index;
+	count = ft_count_atob(stacks, stacks->size_a - index + 1);
+	while (count--)
+	{
+		if 
+	}
+}
+
+ft_sort_big(t_stacks *stacks)
+{
+	while (stacks->size_a > 3)
+	{
+		if (stacks->size_b < 2)
+			ft_push(stacks, 'b');
+		else
+			ft_fill_b(stacks);
+	}
 	ft_sort_three(stacks->a, 'a');
-
-	ft_clst_free(stacks->a);
-	return (0);
+	if (stacks->size_b)
+		ft_refill_a(stacks);
+	//rotate smallest on top
 }

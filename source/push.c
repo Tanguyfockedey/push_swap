@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 18:50:34 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:11:38 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,24 @@ static void	ft_push_op(t_clst **from, t_clst **to)
 	}
 }
 
-void	ft_push(t_clst **from, t_clst **to, char c)
+void	ft_push(t_stacks *stacks, char c)
 {
-	if (!(from))
-		return ;
-	ft_push_op(from, to);
 	if (c == 'a')
+	{
+		if (!stacks->b)
+			return ;
+		ft_push_op(stacks->b, stacks->a);
 		ft_printf("pa\n");
+		stacks->size_a++;
+		stacks->size_b--;
+	}
 	if (c == 'b')
+	{
+		if (!stacks->a)
+			return ;
+		ft_push_op(stacks->a, stacks->b);
 		ft_printf("pb\n");
+		stacks->size_a--;
+		stacks->size_b++;
+	}
 }

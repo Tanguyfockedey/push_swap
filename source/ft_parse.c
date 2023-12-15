@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 17:36:57 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:40:53 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ static void	ft_tab_free(char **argv)
 	free(argv);
 }
 
-static int	ft_error(t_clst **a, int argc, char **argv)
+static void	ft_error(t_clst **a, int argc, char **argv)
 {
 	if (argc == 2)
 		ft_tab_free(argv);
 	ft_clst_free(a);
 	ft_putstr_fd("Error\n", 2);
-	return (0);
+	exit(1);
 }
 
-static int	ft_fill_a(char **argv, t_clst **a)
+static int	ft_fill_a(char **argv, t_stacks *stacks)
 {
 	int		i;
 	int		nbr;
@@ -63,7 +63,8 @@ static int	ft_fill_a(char **argv, t_clst **a)
 			new = ft_clst_new(nbr);
 			if (!new)
 				return (0);
-			ft_clst_add(a, new);
+			ft_clst_add(stacks->a, new);
+			stacks->size_a++;
 		}
 		else
 			return (0);
@@ -71,22 +72,15 @@ static int	ft_fill_a(char **argv, t_clst **a)
 	return (1);
 }
 
-int	ft_parse(int argc, char **argv, t_clst **a)
+void	ft_parse(int argc, char **argv, t_stacks *stacks)
 {
 	argv = ft_tab(argc, argv);
 	if (!argv)
-		return (0);
-	if (!ft_fill_a(argv, a))
-	{
-		ft_error(a, argc, argv);
-		return (0);
-	}
-	if (!ft_clst_check_dup(a))
-	{
-		ft_error(a, argc, argv);
-		return (0);
-	}
+		exit(1);
+	if (!ft_fill_a(argv, stacks))
+		ft_error(stacks->a, argc, argv);
+	if (!ft_clst_check_dup(stacks->a))
+		ft_error(stacks->a, argc, argv);
 	if (argc == 2)
 		ft_tab_free(argv);
-	return (1);
 }
