@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:31:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/21 17:57:20 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:46:30 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_high_index_b(t_stacks *stacks)
 	return (high_index);
 }
 
-int ft_low_index_b(t_stacks *stacks)
+int	ft_low_index_b(t_stacks *stacks)
 {
 	int	i;
 	int	low_index;
