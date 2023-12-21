@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_high_index_b.c                                  :+:      :+:    :+:   */
+/*   high_low_index.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:31:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/19 17:58:18 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:57:20 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ int	ft_high_index_b(t_stacks *stacks)
 	int	high_index;
 	int	high_nb;
 
-	high_nb = 0;
 	i = 1;
+	high_index = 1;
+	high_nb = ft_clst_value(*stacks->b, i);
 	while (i <= stacks->size_b)
 	{
 		if (ft_clst_value(*stacks->b, i) > high_nb)
@@ -30,4 +31,25 @@ int	ft_high_index_b(t_stacks *stacks)
 		i++;
 	}
 	return (high_index);
+}
+
+int ft_low_index_b(t_stacks *stacks)
+{
+	int	i;
+	int	low_index;
+	int	low_nb;
+
+	i = 1;
+	low_index = 1;
+	low_nb = ft_clst_value(*stacks->b, i);
+	while (i <= stacks->size_b)
+	{
+		if (ft_clst_value(*stacks->b, i) < low_nb)
+		{
+			low_nb = ft_clst_value(*stacks->b, i);
+			low_index = i;
+		}
+		i++;
+	}
+	return (low_index);
 }

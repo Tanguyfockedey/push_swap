@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/19 18:52:32 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:18:23 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,9 @@ int	main(int argc, char **argv)
 //	else
 //		ft_printf("list is NOT sorted\n");
 	ft_clst_print_stacks(stacks);
-	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
-	ft_rrotate(stacks->b, 'b');
-	ft_push(stacks, 'b');
-	ft_clst_print_stacks(stacks);
-	ft_printf("pos = %d", ft_first_atob(stacks, 5));
 
+	ft_sort_big(stacks);
+	ft_clst_print_stacks(stacks);
 
 	ft_clst_free(stacks->a);
 	return (0);

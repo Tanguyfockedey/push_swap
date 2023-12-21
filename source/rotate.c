@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:48:03 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/13 19:21:11 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:13:51 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_rotate(t_clst **lst, char c)
 {
-	*lst = (*lst)->next;
+	*lst = (*lst)->prev;
 	if (c == 'a')
 		ft_printf("ra\n");
 	if (c == 'b')
@@ -30,7 +30,7 @@ void	ft_rr(t_clst **a, t_clst **b)
 
 void	ft_rrotate(t_clst **lst, char c)
 {
-	*lst = (*lst)->prev;
+	*lst = (*lst)->next;
 	if (c == 'a')
 		ft_printf("rra\n");
 	if (c == 'b')
