@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 15:32:01 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:26:19 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,21 @@ int		ft_clst_check_dup(t_clst **a);
 void	ft_clst_free(t_clst **lst);
 int		ft_clst_issorted(t_clst **lst);
 t_clst	*ft_clst_new(int nbr);
-void	ft_clst_print_stacks(t_stacks *stacks);
+void	ft_clst_print_stacks(t_stacks *ab);
 int		ft_clst_size(t_clst **a);
 int		ft_clst_value(t_clst *lst, int i);
+void	ft_fill_a(t_stacks *ab);
 void	ft_fill_b(t_stacks *ab);
-void	ft_init(t_stacks *stacks);
+void	ft_init(t_stacks *ab);
 int		ft_int_arg(char *str, int *nbr);
-void	ft_parse(int argc, char **argv, t_stacks *stacks);
+void	ft_parse(int argc, char **argv, t_stacks *ab);
 int		ft_pos_atob(t_stacks *ab, int value_a);
 void	ft_push_atob(t_stacks *ab, int index_a, int sign);
-void	ft_sort_big(t_stacks *stacks);
+void	ft_sort_big(t_stacks *ab);
 void	ft_sort_three(t_clst **lst, char ch);
-int		ft_high_index_b(t_stacks *stacks);
-int		ft_low_index_b(t_stacks *stacks);
-void	ft_push(t_stacks *stacks, char c);
+int		ft_high_index_b(t_stacks *ab);
+int		ft_low_index_b(t_stacks *ab);
+void	ft_push(t_stacks *ab, char c);
 void	ft_rotate(t_clst **lst, char c);
 void	ft_rr(t_clst **a, t_clst **b);
 void	ft_rrotate(t_clst **lst, char c);
@@ -60,6 +61,6 @@ void	ft_rrr(t_clst **a, t_clst **b);
 void	ft_swap(t_clst **lst, char c);
 void	ft_ss(t_clst **a, t_clst **b);
 
-void	ft_fill_b(t_stacks *stacks);
+void	ft_fill_b(t_stacks *ab);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:27:28 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 15:30:11 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:59:53 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,10 @@ void	ft_fill_b(t_stacks *ab)
 	int	small_index;
 	int	sign;
 
-	ft_clst_print_stacks(ab);
 	sign = 0;
 	small_index = ab->size_a;
 	rotate = ft_first_atob(ab, ft_clst_value(*ab->a, ab->size_a));
 	ft_check_rotate(ab, &rotate, &small_index, &sign);
 	ft_check_rrotate(ab, &rotate, &small_index, &sign);
-	ft_printf("index = %d, rotate = %d, sign = %d\n", small_index, rotate, sign);
 	ft_push_atob(ab, small_index, sign);
 }

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_big.c                                      :+:      :+:    :+:   */
+/*   ft_fill_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 17:07:13 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 17:02:24 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/26 15:55:28 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/26 16:59:18 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_big(t_stacks *ab)
+void	ft_fill_a(t_stacks *ab)
 {
-	while (ab->size_a > 3)
+	while (ab->size_b)
 	{
-		if (ab->size_b < 2)
-			ft_push(ab, 'b');
+		if ((*ab->b)->prev->nbr > (*ab->a)->nbr)
+			ft_push(ab, 'a');
+		else if ((*ab->a)->prev->nbr > (*ab->a)->nbr)
+			ft_rrotate(ab->a, 'a');
 		else
-			ft_fill_b(ab);
+			ft_push(ab, 'a');
 	}
-	ft_sort_three(ab->a, 'a');
-	if (ab->size_b)
-		ft_fill_a(ab);
-	while ((*ab->a)->prev->nbr > (*ab->a)->nbr)
-		ft_rrotate(ab->a, 'a');
 }
