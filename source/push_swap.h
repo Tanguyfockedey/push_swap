@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/21 17:49:04 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:32:01 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,12 @@ t_clst	*ft_clst_new(int nbr);
 void	ft_clst_print_stacks(t_stacks *stacks);
 int		ft_clst_size(t_clst **a);
 int		ft_clst_value(t_clst *lst, int i);
+void	ft_fill_b(t_stacks *ab);
 void	ft_init(t_stacks *stacks);
 int		ft_int_arg(char *str, int *nbr);
 void	ft_parse(int argc, char **argv, t_stacks *stacks);
+int		ft_pos_atob(t_stacks *ab, int value_a);
+void	ft_push_atob(t_stacks *ab, int index_a, int sign);
 void	ft_sort_big(t_stacks *stacks);
 void	ft_sort_three(t_clst **lst, char ch);
 int		ft_high_index_b(t_stacks *stacks);

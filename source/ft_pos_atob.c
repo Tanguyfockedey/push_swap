@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_big.c                                      :+:      :+:    :+:   */
+/*   ft_pos_atob.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 17:07:13 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 15:27:57 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/26 15:29:48 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/26 15:30:09 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	ft_sort_big(t_stacks *ab)
+int	ft_pos_atob(t_stacks *ab, int value_a)
 {
-	while (ab->size_a > 3)
+	int	index_b;
+	int	low_index_b;
+
+	low_index_b = ft_low_index_b(ab);
+	index_b = ft_high_index_b(ab);
+	if (value_a < ft_clst_value(*ab->b, low_index_b))
+		return (index_b);
+	while (value_a < ft_clst_value(*ab->b, index_b))
 	{
-		if (ab->size_b < 2)
-			ft_push(ab, 'b');
-		else
-			ft_fill_b(ab);
+		index_b--;
+		if (index_b == 0)
+			index_b = ab->size_b;
 	}
-	ft_clst_print_stacks(ab);
-	ft_sort_three(ab->a, 'a');
-	ft_printf("sort three\n");
-//	if (ab->size_b)
-//		ft_refill_a(ab);
-	//rotate smallest on top
+	return (index_b);
 }

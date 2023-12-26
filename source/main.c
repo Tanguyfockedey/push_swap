@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/21 17:18:23 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:38:44 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int	main(int argc, char **argv)
 {
-	t_stacks	*stacks;
+	t_stacks	*ab;
 	t_stacks	obj;
 
-	stacks = &obj;
-	ft_init(stacks);
-	ft_parse(argc, argv, stacks);
+	ab = &obj;
+	ft_init(ab);
+	ft_parse(argc, argv, ab);
 	
 
 //	ft_printf("clist size = %d\n", ft_clst_size(a));
@@ -29,11 +29,11 @@ int	main(int argc, char **argv)
 //		ft_printf("list is sorted\n");
 //	else
 //		ft_printf("list is NOT sorted\n");
-	ft_clst_print_stacks(stacks);
+	ft_clst_print_stacks(ab);
 
-	ft_sort_big(stacks);
-	ft_clst_print_stacks(stacks);
+	ft_sort_big(ab);
+	ft_clst_print_stacks(ab);
 
-	ft_clst_free(stacks->a);
+	ft_clst_free(ab->a);
 	return (0);
 }

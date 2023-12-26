@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/15 17:40:53 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:37:25 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_error(t_clst **a, int argc, char **argv)
 	exit(1);
 }
 
-static int	ft_fill_a(char **argv, t_stacks *stacks)
+static int	ft_fill_a(char **argv, t_stacks *ab)
 {
 	int		i;
 	int		nbr;
@@ -63,8 +63,8 @@ static int	ft_fill_a(char **argv, t_stacks *stacks)
 			new = ft_clst_new(nbr);
 			if (!new)
 				return (0);
-			ft_clst_add(stacks->a, new);
-			stacks->size_a++;
+			ft_clst_add(ab->a, new);
+			ab->size_a++;
 		}
 		else
 			return (0);
@@ -72,15 +72,15 @@ static int	ft_fill_a(char **argv, t_stacks *stacks)
 	return (1);
 }
 
-void	ft_parse(int argc, char **argv, t_stacks *stacks)
+void	ft_parse(int argc, char **argv, t_stacks *ab)
 {
 	argv = ft_tab(argc, argv);
 	if (!argv)
 		exit(1);
-	if (!ft_fill_a(argv, stacks))
-		ft_error(stacks->a, argc, argv);
-	if (!ft_clst_check_dup(stacks->a))
-		ft_error(stacks->a, argc, argv);
+	if (!ft_fill_a(argv, ab))
+		ft_error(ab->a, argc, argv);
+	if (!ft_clst_check_dup(ab->a))
+		ft_error(ab->a, argc, argv);
 	if (argc == 2)
 		ft_tab_free(argv);
 }
