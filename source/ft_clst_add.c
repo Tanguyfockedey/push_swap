@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:35:11 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/05 14:51:24 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:38:16 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_clst_add(t_clst **lst, t_clst *new)
 		new->next = *lst;
 		new->prev = tmp;
 		(*lst)->prev = new;
+		*lst = new;
 	}
 }

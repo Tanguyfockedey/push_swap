@@ -6,12 +6,32 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:31:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 15:38:19 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:45:05 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	ft_high_index_a(t_stacks *ab)
+{
+	int	i;
+	int	high_index;
+	int	high_nb;
+
+	i = 1;
+	high_index = 1;
+	high_nb = ft_clst_value(*ab->a, i);
+	while (i <= ab->size_a)
+	{
+		if (ft_clst_value(*ab->a, i) > high_nb)
+		{
+			high_nb = ft_clst_value(*ab->a, i);
+			high_index = i;
+		}
+		i++;
+	}
+	return (high_index);
+}
 int	ft_high_index_b(t_stacks *ab)
 {
 	int	i;

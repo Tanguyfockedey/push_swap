@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:55:49 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/04 14:16:01 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:21:13 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_clst	*ft_clst_new(int nbr)
 	if (!cell)
 		return (0);
 	cell->nbr = nbr;
-	cell->index = 0;
 	cell->next = cell;
 	cell->prev = cell;
 	return (cell);

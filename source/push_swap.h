@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 16:26:19 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 19:58:11 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_clst
 	struct s_clst	*next;
 	struct s_clst	*prev;
 	int				nbr;
-	int				index;
 }	t_clst;
 
 typedef struct s_stacks
@@ -42,15 +41,16 @@ t_clst	*ft_clst_new(int nbr);
 void	ft_clst_print_stacks(t_stacks *ab);
 int		ft_clst_size(t_clst **a);
 int		ft_clst_value(t_clst *lst, int i);
-void	ft_fill_a(t_stacks *ab);
 void	ft_fill_b(t_stacks *ab);
 void	ft_init(t_stacks *ab);
 int		ft_int_arg(char *str, int *nbr);
 void	ft_parse(int argc, char **argv, t_stacks *ab);
 int		ft_pos_atob(t_stacks *ab, int value_a);
 void	ft_push_atob(t_stacks *ab, int index_a, int sign);
+void	ft_refill_a(t_stacks *ab);
 void	ft_sort_big(t_stacks *ab);
 void	ft_sort_three(t_clst **lst, char ch);
+int		ft_high_index_a(t_stacks *ab);
 int		ft_high_index_b(t_stacks *ab);
 int		ft_low_index_b(t_stacks *ab);
 void	ft_push(t_stacks *ab, char c);

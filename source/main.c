@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 14:14:38 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 17:04:29 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 21:19:47 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main(int argc, char **argv)
 	ab = &obj;
 	ft_init(ab);
 	ft_parse(argc, argv, ab);
+//	ft_clst_print_stacks(ab);
 	ft_sort_big(ab);
+//	ft_clst_print_stacks(ab);
 	ft_clst_free(ab->a);
 	return (0);
 }

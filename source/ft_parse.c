@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:26:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 15:37:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:48:23 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ static char	**ft_tab(int argc, char **argv)
 		return (0);
 	if (argc == 2)
 	{
+		if (argv[1][0] == 0)
+		{
+			ft_putstr_fd("Error\n", 2);
+			return (0);
+		}
 		argv = ft_split(argv[1], ' ');
 		if (!argv)
 		{
