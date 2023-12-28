@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/28 21:40:15 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:43:50 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,5 @@ void	ft_rrotate(t_clst **lst, char c);
 void	ft_rrr(t_clst **a, t_clst **b);
 void	ft_swap(t_clst **lst, char c);
 void	ft_ss(t_clst **a, t_clst **b);
-
-void	ft_fill_b(t_stacks *ab);
 
 #endif
