@@ -6,13 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:27:28 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 16:59:53 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:33:55 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_first_atob(t_stacks *ab, int value_a)
+static int	ft_first_atob(t_stacks *ab, int value_a)
 {
 	int	pos;
 
@@ -23,19 +23,19 @@ int	ft_first_atob(t_stacks *ab, int value_a)
 		return (pos);
 }
 
-void	ft_check_rotate(t_stacks *ab, int *rotate, int *small_index, int *sign)
+static void	ft_check_rotate(t_stacks *ab, int *rotate, int *small_i, int *sign)
 {
 	int	i;
 	int	pos;
 
 	i = 1;
-	while (i < *rotate)
+	while (i < *rotate && i < ab->size_a / 2)
 	{
 		pos = ft_pos_atob(ab, ft_clst_value(*ab->a, ab->size_a - i));
 		if (pos + i < *rotate)
 		{
 			*rotate = pos + i;
-			*small_index = ab->size_a - i;
+			*small_i = ab->size_a - i;
 			*sign = -1;
 		}
 		if (ab->size_b - pos < *rotate)
@@ -44,26 +44,26 @@ void	ft_check_rotate(t_stacks *ab, int *rotate, int *small_index, int *sign)
 				*rotate = ab->size_b - pos;
 			else
 				*rotate = i;
-			*small_index = ab->size_a - i;
+			*small_i = ab->size_a - i;
 			*sign = -1;
 		}
 		i++;
 	}
 }
 
-void	ft_check_rrotate(t_stacks *ab, int *rotate, int *small_index, int *sign)
+static void	ft_check_rrotate(t_stacks *ab, int *rotate, int *small_i, int *sign)
 {
 	int	i;
 	int	pos;
 
 	i = 1;
-	while (i < *rotate)
+	while (i < *rotate && i < ab->size_a / 2)
 	{
 		pos = ft_pos_atob(ab, ft_clst_value(*ab->a, i));
 		if (ab->size_b - pos + i < *rotate)
 		{
 			*rotate = ab->size_b - pos + i;
-			*small_index = i;
+			*small_i = i;
 			*sign = 1;
 		}
 		if (pos < *rotate)
@@ -72,7 +72,7 @@ void	ft_check_rrotate(t_stacks *ab, int *rotate, int *small_index, int *sign)
 				*rotate = pos;
 			else
 				*rotate = i;
-			*small_index = i;
+			*small_i = i;
 			*sign = 1;
 		}
 		i++;

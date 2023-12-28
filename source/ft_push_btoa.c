@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_atob.c                                     :+:      :+:    :+:   */
+/*   ft_push_btoa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 15:20:26 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/28 15:56:41 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/28 18:14:04 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/28 19:47:08 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static void	ft_rotate_b(t_stacks *ab, int index_b)
 
 static void	ft_rotate_ab(t_stacks *ab, int index_a, int index_b)
 {
-	if (index_b <= ab->size_b / 2)
+	if (index_a <= ab->size_a / 2)
 		ft_rotate_a(ab, index_a);
-	if (index_b <= ab->size_b / 2)
+	if (index_a <= ab->size_a / 2)
 		ft_rotate_b(ab, index_b);
 	else
 	{
@@ -63,9 +63,9 @@ static void	ft_rotate_ab(t_stacks *ab, int index_a, int index_b)
 
 static void	ft_rrotate_ab(t_stacks *ab, int index_a, int index_b)
 {
-	if (index_b >= ab->size_b / 2)
+	if (index_a >= ab->size_a / 2)
 		ft_rotate_a(ab, index_a);
-	if (index_b >= ab->size_b / 2)
+	if (index_a >= ab->size_a / 2)
 		ft_rotate_b(ab, index_b);
 	else
 	{
@@ -90,16 +90,16 @@ static void	ft_rrotate_ab(t_stacks *ab, int index_a, int index_b)
 	}
 }
 
-void	ft_push_atob(t_stacks *ab, int index_a, int sign)
+void	ft_push_btoa(t_stacks *ab, int index_b, int sign)
 {
-	int	index_b;
+	int	index_a;
 
-	index_b = ft_pos_atob(ab, ft_clst_value(*ab->a, index_a));
+	index_a = ft_pos_btoa(ab, ft_clst_value(*ab->b, index_b));
 	if (sign == 0)
-		ft_rotate_b(ab, index_b);
+		ft_rotate_a(ab, index_a);
 	if (sign == -1)
 		ft_rotate_ab(ab, index_a, index_b);
 	if (sign == 1)
 		ft_rrotate_ab(ab, index_a, index_b);
-	ft_push(ab, 'b');
+	ft_push(ab, 'a');
 }

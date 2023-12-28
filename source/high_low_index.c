@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:31:48 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 20:45:05 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:44:19 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,28 @@ int	ft_high_index_a(t_stacks *ab)
 	}
 	return (high_index);
 }
+
+int	ft_low_index_a(t_stacks *ab)
+{
+	int	i;
+	int	low_index;
+	int	low_nb;
+
+	i = 1;
+	low_index = 1;
+	low_nb = ft_clst_value(*ab->a, i);
+	while (i <= ab->size_a)
+	{
+		if (ft_clst_value(*ab->a, i) < low_nb)
+		{
+			low_nb = ft_clst_value(*ab->a, i);
+			low_index = i;
+		}
+		i++;
+	}
+	return (low_index);
+}
+
 int	ft_high_index_b(t_stacks *ab)
 {
 	int	i;

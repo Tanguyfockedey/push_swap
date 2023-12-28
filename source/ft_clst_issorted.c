@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:34:17 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/08 18:01:21 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 20:03:42 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_clst_issorted(t_clst **lst)
 	tmp = *lst;
 	while (tmp != (*lst)->prev || flag)
 	{
-		if (tmp->nbr > tmp->next->nbr)
+		if (tmp->nbr < tmp->next->nbr)
 			return (0);
 		flag = 0;
 		tmp = tmp->next;

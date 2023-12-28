@@ -6,11 +6,13 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:09:37 by tafocked          #+#    #+#              #
-#    Updated: 2023/12/26 17:22:47 by tafocked         ###   ########.fr        #
+#    Updated: 2023/12/28 21:27:13 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
+
+NAME_B	= checker
 
 FILES	= source/ft_clst_add.c \
 			source/ft_clst_check_dup.c \
@@ -25,12 +27,14 @@ FILES	= source/ft_clst_add.c \
 			source/ft_int_arg.c \
 			source/ft_parse.c \
 			source/ft_pos_atob.c \
+			source/ft_pos_btoa.c \
 			source/ft_push_atob.c \
+			source/ft_push_btoa.c \
 			source/ft_refill_a.c \
 			source/ft_sort_big.c \
 			source/ft_sort_three.c \
 			source/high_low_index.c \
-			source/main.c \
+			source/push_swap.c \
 			source/push.c \
 			source/rotate.c \
 			source/swap.c \
@@ -40,15 +44,13 @@ CFLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
 LDLIBS	= includes/libft_updated/libft.a
 OBJ		= $(FILES:.c=.o)
 
-all: libs $(NAME)
+all: $(NAME)
 
 re: fclean all
 
-$(NAME):  $(OBJ)
-	$(CC) $(CFLAGS) $(LDLIBS) $(OBJ) -o $(NAME)
-
-libs:
+$(NAME): $(OBJ)
 	@ $(MAKE) -C includes/libft_updated
+	$(CC) $(CFLAGS) $(LDLIBS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)

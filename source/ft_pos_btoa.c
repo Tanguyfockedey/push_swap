@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   ft_pos_btoa.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 17:25:24 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/28 17:10:03 by tafocked         ###   ########.fr       */
+/*   Created: 2023/12/28 17:41:31 by tafocked          #+#    #+#             */
+/*   Updated: 2023/12/28 19:05:57 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init(t_stacks *ab)
+int	ft_pos_btoa(t_stacks *ab, int value_b)
 {
-	ab->point_a = 0;
-	ab->point_b = 0;
-	ab->a = &(ab->point_a);
-	ab->b = &(ab->point_b);
-	ab->size_a = 0;
-	ab->size_b = 0;
+	int	index_a;
+	int	high_index_a;
+
+	high_index_a = ft_high_index_a(ab);
+	index_a = ft_low_index_a(ab);
+	if (value_b > ft_clst_value(*ab->a, high_index_a))
+		return (index_a);
+	while (value_b > ft_clst_value(*ab->a, index_a))
+	{
+		index_a--;
+		if (index_a == 0)
+			index_a = ab->size_a;
+	}
+	return (index_a);
 }

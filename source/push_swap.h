@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:12:47 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/26 19:58:11 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:38:55 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,15 @@ void	ft_init(t_stacks *ab);
 int		ft_int_arg(char *str, int *nbr);
 void	ft_parse(int argc, char **argv, t_stacks *ab);
 int		ft_pos_atob(t_stacks *ab, int value_a);
+int		ft_pos_btoa(t_stacks *ab, int value_b);
 void	ft_push_atob(t_stacks *ab, int index_a, int sign);
+void	ft_push_btoa(t_stacks *ab, int index_b, int sign);
 void	ft_refill_a(t_stacks *ab);
 void	ft_sort_big(t_stacks *ab);
 void	ft_sort_three(t_clst **lst, char ch);
 int		ft_high_index_a(t_stacks *ab);
 int		ft_high_index_b(t_stacks *ab);
+int		ft_low_index_a(t_stacks *ab);
 int		ft_low_index_b(t_stacks *ab);
 void	ft_push(t_stacks *ab, char c);
 void	ft_rotate(t_clst **lst, char c);
