@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:07:13 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/28 19:49:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:31:15 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ void	ft_sort_big(t_stacks *ab)
 			ft_push(ab, 'b');
 		else
 			ft_fill_b(ab);
-//		ft_clst_print_stacks(ab);//
 	}
-//	ft_printf("sort three\n");//
 	ft_sort_three(ab->a, 'a');
-//	ft_clst_print_stacks(ab);//
 	while (ab->size_b)
 		ft_refill_a(ab);
 	high_val_a = ft_clst_value(*ab->a, ft_high_index_a(ab));

@@ -6,38 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 15:55:28 by tafocked          #+#    #+#             */
-/*   Updated: 2023/12/28 19:48:54 by tafocked         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:31:04 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-void	ft_refill_a(t_stacks *ab)
-{
-	while (ab->size_b)
-	{
-		if ((*ab->b)->prev->nbr > (*ab->a)->nbr)
-			if ((*ab->b)->prev->nbr < (*ab->a)->prev->nbr)
-				ft_push(ab, 'a');
-			else
-				if ((*ab->a)->nbr < (*ab->a)->prev->nbr)
-					if ((*ab->b)->prev->nbr < (*ab->a)->prev->prev->nbr)
-						ft_rotate(ab->a, 'a');
-					else
-						ft_rrotate(ab->a, 'a');
-				else
-					ft_push(ab, 'a');
-		else
-			if ((*ab->b)->prev->nbr < (*ab->a)->prev->nbr)
-				if ((*ab->a)->nbr < (*ab->a)->prev->nbr)
-					ft_rrotate(ab->a, 'a');
-				else
-					ft_push(ab, 'a');
-			else
-				ft_rrotate(ab->a, 'a');
-	}
-}
-*/
 
 static int	ft_first_btoa(t_stacks *ab, int value_a)
 {
@@ -115,10 +88,7 @@ void	ft_refill_a(t_stacks *ab)
 	sign = 0;
 	small_index = ab->size_b;
 	rotate = ft_first_btoa(ab, ft_clst_value(*ab->b, ab->size_b));
-//	ft_printf("rotate = %d\n", rotate);//
 	ft_check_rotate(ab, &rotate, &small_index, &sign);
 	ft_check_rrotate(ab, &rotate, &small_index, &sign);
-//	ft_printf("small_index = %d   sign = %d   rotate = %d\n", small_index, sign, rotate);//
 	ft_push_btoa(ab, small_index, sign);
-//	ft_clst_print_stacks(ab);//
 }
