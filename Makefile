@@ -6,13 +6,11 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:09:37 by tafocked          #+#    #+#              #
-#    Updated: 2023/12/28 21:39:37 by tafocked         ###   ########.fr        #
+#    Updated: 2023/12/28 22:00:55 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
-
-NAME_B	= checker
 
 FILES	= source/ft_clst_add.c \
 			source/ft_clst_check_dup.c \
@@ -39,7 +37,7 @@ FILES	= source/ft_clst_add.c \
 			source/swap.c \
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS	= -Wall -Wextra -Werror
 LDLIBS	= includes/libft_updated/libft.a
 OBJ		= $(FILES:.c=.o)
 
